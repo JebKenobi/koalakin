@@ -1,0 +1,13 @@
+/*
+Theme Name: Koalakin
+Theme URI: http://koalakin.com/
+Template: twentyfourteen
+Version: 0.1
+*/
+
+@import url("../twentyfourteen/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+@import url("css/screen.css");

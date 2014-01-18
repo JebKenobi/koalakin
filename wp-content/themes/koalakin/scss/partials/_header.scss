@@ -1,0 +1,182 @@
+header.site-header {
+	text-align: center;
+	border-bottom: 5px solid lighten( $teal, 13%);
+	position: relative;
+	z-index: 100;
+	background-color: #fff;
+	
+	#primary-navigation {
+		list-style-type: none;
+		margin: 0 auto;
+		padding: 0 0 40px;
+		display: inline-block;
+		margin: 0 auto;
+		font-size: 1em;
+		text-align: center;
+		float: none;
+
+
+		li {
+			float: left;
+			text-transform: uppercase;
+			padding: 20px;
+
+			a {
+				color: $brown;
+				text-decoration: none;
+				font-weight: normal;
+			}
+			a:hover {
+				color: $teal;
+				text-decoration: none;
+				background: none;
+			}
+		}
+		li:hover, li.focus, li:hover a, li.focus a {
+			background: none;
+		}
+	}
+	#primary-navigation.fixed {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: url(../images/logo-sm.gif) 6% 45% $lgray no-repeat;
+		width: 100%;
+		padding: 0 0 40px 27%;
+		border-bottom: 1px solid darken($lgray, 5%);
+
+		li {
+			padding: 0;
+
+			a {
+				padding: 20px;
+				display: inline-block;
+			}
+			a:hover {
+				background-color: #fff;
+			}
+
+		}
+		li.selected {
+			a {
+				background-color: #fff;
+				color: $teal;
+			}
+			a:hover {
+				color: darken($green, 10%);
+			}
+		}
+	}
+	.logo img {
+		background: url(../images/logo-bottom.png) 100% 50% no-repeat;
+		height: auto;
+		width: 50%;
+		max-width: 196px;
+		padding: 40px 150px 135px;
+		position: absolute;
+		left: 50%;
+		margin-left: -240px;
+		top: 50px;
+	}
+	.logo img {
+		background-size: 100%;
+	}
+}
+@media screen and (max-width: 782px) {
+	header.site-header {
+		background: #fff;
+		padding: 100px 0px 0px;
+
+		.header-main {
+			padding: 0;
+			max-width: $break-large;
+		}
+
+		.logo img {
+			top: 64px;
+			z-index: 100;
+		}
+		#primary-navigation.toggled-on {
+			float: right;
+			width: 100%;
+			margin: 30px 0 0;
+			padding: 0;
+			
+
+			li {
+				border-bottom: 1px dotted #fff;
+				float: none;
+				width: 100%;
+				text-align: left;
+				background-color: $teal;
+				padding: 0;
+				position: relative;
+				z-index: 150;
+				a {
+					color: #fff;
+					padding: 20px;
+				}
+				a:hover {
+					color: $lgray;
+				}
+			}
+			li:hover, li.focus {
+				background-color: darken($teal, 10%);
+			}
+			li:last-child {
+				border-bottom: 0;
+			}
+			.menu-toggle {
+				background-color: $teal;
+			}
+			.menu-toggle:before {
+				color: #fff;
+				content: "\f406";
+			}
+			.nav-menu {
+				margin-top: -25px;
+			}
+		}
+		#primary-navigation.fixed, #primary-navigation.fixed.toggled-on {
+			float: none;
+			background-color: $lgray;
+			display: inline-block;
+			height: 75px;
+			margin-top: 0;
+
+			.menu-toggle {
+				top: 0;
+			}
+
+			li {
+			padding: 0;
+
+			a {
+				padding: 20px;
+				display: block;
+			}
+			a:hover {
+				background-color: darken($teal, 10%);
+			}
+
+		}
+			
+		}
+		#primary-navigation.fixed.toggled-on {
+
+			.nav-menu {
+				margin-top: 75px;
+			}
+		}
+	}
+	.menu-toggle {
+		height: 75px;
+		width: 75px;
+		top: 30px;
+	}
+	
+	.menu-toggle:before {
+		color: $teal;
+		font-size: 40px;
+	}
+}
