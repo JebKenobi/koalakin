@@ -1,0 +1,1 @@
+$(function(){"use strict";}());$(document).ready(function(){$(window).scroll(function(){console.log($(window).scrollTop());if($(window).scrollTop()>185){$("#primary-navigation").addClass("fixed");$("#socialShare").addClass("fixed")}if($(window).scrollTop()<185){$("#primary-navigation").removeClass("fixed");$("#socialShare").removeClass("fixed")}})});

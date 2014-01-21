@@ -66,20 +66,54 @@ a.button:hover, a.button.rm:hover {
 		color: $green;
 	}
 }
-.cta2 {
+.post-navigation {
+	float: right;
+	padding: 0 0 25px !important;
+	width: 63.85%;
+	float: right;
+	margin: -3px 20% 0 0 !important;
+	border-left: 3px dotted $lgray;
+	display: block;
+	max-width: 64%;
+
+	.nav-links {
+		border: none;
+		display: inline-block;
+		width: 90%;
+
+		a {
+			border: none;
+			width: auto;
+			display: inline-block;
+			text-transform: uppercase;
+		}
+
+		a[rel="prev"] {
+			float: left;
+		}
+		a[rel="next"] {
+			float: right;
+		}
+	}
+}
+.cta2, .post-navigation .meta-nav, .comment-reply-link {
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 5px 15px;
+	padding: 0px 15px;
 	@include border-radius(5px);
-	font-size: 0.9em;
+	font-size: 1em;
+	font-weight: 100;
 }
-.cta2.green {
+.cta2.green, .post-navigation .meta-nav:hover, .comment-reply-link {
 	background-color: rgba(104,159,63,0.2);
 	color: darken($green, 10%);
 }
-.cta2.teal {
+.cta2.teal, .post-navigation .meta-nav, .comment-reply-link:hover {
 	background-color: rgba(107,202,208,0.2);
 	color: $teal;
+}
+.comment-reply-link:before, .comment-reply-login:before {
+	content: '';
 }
 .site, .site-header {
 	max-width: 100%;
@@ -154,6 +188,7 @@ a.button:hover, a.button.rm:hover {
 		margin-bottom: 25px;
 		a {
 			color: $teal;
+			font-weight: normal;
 		}
 		a:hover {
 			color: $green;
@@ -165,6 +200,8 @@ a.button:hover, a.button.rm:hover {
 		.cat a, .date {
 			color: darken($lgray, 30%);
 			font-style: italic;
+			font-size: 0.8em;
+			font-weight: lighter;
 		}
 		.cat a:hover {
 			color: $green;
@@ -319,6 +356,34 @@ a.button:hover, a.button.rm:hover {
 
 	#content {
 		padding-top: 150px;
+
+		ul#menu-social {
+			li a {
+				background-position: 0 100%;
+			}
+			li.menu-item-76 a {
+				background-position: $twi 100%;
+			}
+			li.menu-item-77 a {
+				background-position: $pin 100%;
+			}
+			li.menu-item-78 a {
+				background-position: $rss 100%;
+			}
+			li a:hover {
+				background-position: 0 0%;
+			}
+			li.menu-item-76 a:hover {
+				background-position: $twi 0%;
+			}
+			li.menu-item-77 a:hover {
+				background-position: $pin 0%;
+			}
+			li.menu-item-78 a:hover {
+				background-position: $rss 0%;
+			}
+			
+		}
 	
 		article {
 			text-align: left;
@@ -338,10 +403,127 @@ a.button:hover, a.button.rm:hover {
 			.left-entry-meta {
 				position: fixed;
 				left: 40px;
+				z-index: 50;
 
 				.dot {
-					left: 111% !important;
+					left: 109.4% !important;
 				}
+			}
+		}
+		#comments {
+			display: inline-block;
+			width: 100%;
+			max-width: 100%;
+			padding: 0;
+			margin-top: 0;
+			background-color: #fff;
+			z-index: 55;
+			position: relative;
+
+			
+			.comment-list {
+				width: 100%;
+				max-width: 100%;
+
+				article {
+					width: 100%;
+					border-top: none;
+				}
+
+				.reply {
+					font-size: 1em;
+					line-height: 2em;
+					padding: 0;
+					width: 59%;
+					float: right;
+					text-align: left;
+					border-left: 3px dotted $lgray;
+					padding: 25px 26% 0 2.5%;
+					margin-top: 0;
+
+					.comment-reply-link {
+						padding: 3px 15px;
+					}
+				}
+				.comment-content {
+					width: 55.3%;
+					float: right;
+					font-size: 1.1em;
+					border-left: 3px dotted $lgray;
+					padding: 0px 26% 25px 2.5%;
+					text-align: left;
+				}
+				.comment-meta {
+				width: 13.5%;
+				float: left;
+				text-align: right;
+				font-size: 1em;
+				color: darken($lgray, 30%);
+				padding-bottom: 25px;
+
+				span {
+					font-style: italic;
+					color: darken($lgray, 30%);
+				}
+				a {
+					font-weight: normal;
+					text-transform: capitalize;
+				}
+				div.dot {
+					background: darken($lgray, 30%);
+					@include border-radius(7px);
+					height:7px;
+					width: 7px;
+					position: absolute;
+					top: 0px;
+					left: 15.7%;
+				}
+
+				.comment-author, .comment-awaiting-moderation, .comment-content, .comment-list .reply, .comment-metadata {
+					padding-left: 0;
+				}
+			}
+			}
+			#respond {
+				max-width:64%;
+				float: right;
+				width: 61.2%;
+				margin: -3px 20% 0 0 !important;
+				border-left: 3px dotted $lgray;
+				padding-left: 2.7%;
+				padding-top: 25px;
+
+				textarea:focus, input[type="text"]:focus {
+					border: 2px solid #38a4f0;
+				}
+				textarea {
+					width: 100%;
+					height: 150px;
+				}
+				input[type="text"] {
+					width: 30%;
+					float: left;
+					min-width: 150px;
+					margin: 30px 5% 0 0;
+				}
+				input[type="text"]:last-of-type {
+					margin-right: 0;
+				}
+				input[type="submit"] {
+					width: 100%;
+					clear: both;
+					background-color: $green;
+					font-weight: lighter;
+					font-size: 1.1em;
+					margin-top: 30px;
+				}
+				input[type="submit"]:hover, input[type="submit"]:focus {
+					background-color: $teal;
+				}
+				input.hide {
+					display: none;
+				}
+
 			}
 		}
 	}
@@ -712,36 +894,37 @@ ul#menu-social li a, ul#menu-social-1 li a, .single .sidebar ul#menu-social li a
 }
 ul#menu-social, ul#menu-social-1 {
 	li.menu-item-76 a {
-		background-position: $twi;
+		background-position: $twi 0%;
 	}
 }
 .single .sidebar ul#menu-social li.menu-item-76 a:hover {
-	background-position: $twi;
+	background-position: $twi 0%;
 }
 
 ul#menu-social, ul#menu-social-1 {
 	li.menu-item-77 a {
-		background-position: $pin;
+		background-position: $pin 0%;
 	}
 }
 .single .sidebar ul#menu-social li.menu-item-77 a:hover {
-	background-position: $pin;
+	background-position: $pin 0%;
 }
 ul#menu-social, ul#menu-social-1 {
 	li.menu-item-78 a {
-		background-position: $rss;
+		background-position: $rss 0%;
 	}
 }
 .single .sidebar ul#menu-social li.menu-item-78 a:hover {
-	background-position: $rss;
+	background-position: $rss 0%;
 }
 blockquote {
 	border-left: 10px solid $lgray;
 	margin: 20px 0;
 	padding: 0 35px;
 	font-style: italic;
-	color: darken($lgray, 30%);
+	color: darken($lgray, 20%);
 	font-size: 1.1em;
+	line-height: 1.65em;
 }
 .blogFeat:last-child, .blogFeat.last {
 	margin-right: 0;
