@@ -26,6 +26,11 @@
 		?>
 		<?php if(is_single()): ?>
 			<p><a href="<?php the_author_meta('user_url'); ?>"><?php the_author_meta('display_name'); ?></a></p>
+			<div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+			<div class="tweet">
+				<a href="https://twitter.com/share" class="twitter-share-button" data-via="KoalaKin">Tweet</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</div>
 		<?php endif; ?>
 		<?php if(!is_single()): echo '<a href="' .esc_url(get_permalink()) .'" class="post-thumbnail">'; the_post_thumbnail('thumbnail'); echo '</a>'; endif; ?>
 
