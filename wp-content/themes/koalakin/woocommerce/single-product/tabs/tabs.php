@@ -21,6 +21,7 @@ if ( ! empty( $tabs ) ) : ?>
 <hr />
 	<div class="woocommerce-tabs">
 		<div class="leftSide sidebar">
+			<p class="title">Topics</p>
 			<ul class="tabs">
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 
@@ -34,6 +35,7 @@ if ( ! empty( $tabs ) ) : ?>
 		<?php foreach ( $tabs as $key => $tab ) : ?>
 
 			<div class="panel content" id="tab-<?php echo $key ?>">
+				<p class="subtitle">More Info</p>
 				<?php call_user_func( $tab['callback'], $key, $tab ) ?>
 			</div>
 

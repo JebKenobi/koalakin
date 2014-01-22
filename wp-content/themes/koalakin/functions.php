@@ -132,7 +132,6 @@ function koalakin_post_nav() {
 
   ?>
   <nav class="navigation post-navigation" role="navigation">
-    <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'twentyfourteen' ); ?></h1>
     <div class="nav-links">
       <?php
       if ( is_attachment() ) :
@@ -146,4 +145,28 @@ function koalakin_post_nav() {
   </nav><!-- .navigation -->
   <?php
 }
-
+function koalakin_comments_callback($comment, $args, $depth) {
+    
+       $GLOBALS['comment'] = $comment; ?>
+       
+        <div <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
+                
+            <div class="comment-meta">
+              <div class="dot"></div>
+                <em><?php comment_date('l'); ?></em>, <?php comment_date('j F Y'); ?>
+                <br />
+                <?php printf(__('%s'), get_comment_author_link()) ?>
+                <?php if ($comment->comment_approved == '0') : ?>
+                  <em><php _e('Your comment is awaiting moderation.') ?></em><br />
+                <?php endif; ?>
+            </div>
+            <div class="comment-content">
+              <?php comment_text(); ?>
+            
+              <div class="reply">
+                  <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+              </div>
+          </div>
+        
+    <?php
+}

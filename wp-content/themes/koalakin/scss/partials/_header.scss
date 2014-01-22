@@ -33,7 +33,7 @@ header.site-header {
 			}
 		}
 		li:hover, li.focus, li:hover a, li.focus a {
-			background: none;
+			background-color: transparent;
 		}
 	}
 	#primary-navigation.fixed {
@@ -57,7 +57,7 @@ header.site-header {
 			}
 
 		}
-		li.selected {
+		li.current-menu-item, li.current-category-ancestor {
 			a {
 				background-color: #fff;
 				color: $teal;
@@ -81,6 +81,19 @@ header.site-header {
 	.logo img {
 		background-size: 100%;
 	}
+}
+.category-3 header.site-header #primary-navigation.fixed li.current-category-ancestor {
+	a {
+				color: $brown;
+				text-decoration: none;
+				font-weight: normal;
+				background-color: transparent;
+			}
+			a:hover {
+				color: $teal;
+				text-decoration: none;
+				background-color: #fff;
+			}
 }
 @media screen and (max-width: 782px) {
 	header.site-header {

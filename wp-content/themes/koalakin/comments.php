@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 
 	<h2 class="comments-title">
-		
+		Comments <?php comments_number( '', '1', '%' ); ?>
 	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -35,25 +35,11 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<div class="comment-list">
-		<?php 
-		$postid = get_the_ID();
-		$comments = get_comments('post_id=$postid');
-		foreach($comments as $comment) : ?>
-			<article class="comment">
-				<div class="comment-meta">
-					<span><?php comment_date('l'); ?></span> <br /> <?php comment_date('j F Y'); ?><br />
-					<div class="comment-author vcard"><a href="<?php comment_author_url();?>"><?php comment_author(); ?></a></div>
-					<div class="dot"></div>
-				</div>
-				<div class="comment-content">
-					<?php
-					echo($comment->comment_content); ?>
-				</div>
-				 <?php echo($comment->comment_reply_link); ?> 
-				</article>
-
-		<?php endforeach;
-		?>
+		<?php $comment_args = array(
+			'style'  => 'div',
+			'callback' => 'koalakin_comments_callback',
+		); ?>
+		<?php wp_list_comments($comment_args); ?>
 		
 	</div><!-- .comment-list -->
 

@@ -104,13 +104,14 @@ a.button:hover, a.button.rm:hover {
 	font-size: 1em;
 	font-weight: 100;
 }
-.cta2.green, .post-navigation .meta-nav:hover, .comment-reply-link {
-	background-color: rgba(104,159,63,0.2);
-	color: darken($green, 10%);
-}
+
 .cta2.teal, .post-navigation .meta-nav, .comment-reply-link:hover {
 	background-color: rgba(107,202,208,0.2);
 	color: $teal;
+}
+.cta2.green, .cta2.teal:hover, .post-navigation .meta-nav:hover, .comment-reply-link {
+	background-color: rgba(104,159,63,0.2);
+	color: darken($green, 10%);
 }
 .comment-reply-link:before, .comment-reply-login:before {
 	content: '';
@@ -317,10 +318,14 @@ a.button:hover, a.button.rm:hover {
 	}
 
 	.hentry {
-		float: right;
+		float: left;
+		margin-right: 5%;
+	}
+	.hentry:last-child {
 		margin-right: 0;
 	}
-
+}
+.category-1 #featured-content {
 	.featured-content-inner article:first-of-type {
 		width: 62%;
 		float: left;
@@ -334,6 +339,10 @@ a.button:hover, a.button.rm:hover {
 			background: none;
 		}
 
+	}
+	.hentry {
+		float: right;
+		margin-right: 0;
 	}
 }
 .archive, .category, .single {
@@ -420,10 +429,20 @@ a.button:hover, a.button.rm:hover {
 			z-index: 55;
 			position: relative;
 
+			.comments-title {
+				font-family: 'Kefa', serif;
+				color: darken($lgray, 30%);
+				text-transform: none;
+				font-size: 1.3em;
+				text-align: left;
+			}
+
 			
 			.comment-list {
 				width: 100%;
 				max-width: 100%;
+				margin-bottom: 0;
+				border-top: 1px solid darken($lgray, 30%);
 
 				article {
 					width: 100%;
@@ -431,58 +450,88 @@ a.button:hover, a.button.rm:hover {
 				}
 
 				.reply {
-					font-size: 1em;
+					font-size: 0.9em;
 					line-height: 2em;
 					padding: 0;
-					width: 59%;
-					float: right;
 					text-align: left;
-					border-left: 3px dotted $lgray;
-					padding: 25px 26% 0 2.5%;
-					margin-top: 0;
 
 					.comment-reply-link {
 						padding: 3px 15px;
+						text-decoration: none;
 					}
 				}
-				.comment-content {
-					width: 55.3%;
+
+				.depth-1 {
+					display: inline-block;
+					position: relative;
+
+					.comment-content {
+						width: 55.3%;
+						float: right;
+						font-size: 1.1em;
+						border-left: 3px dotted $lgray;
+						padding: 25px 26% 25px 2.6% !important;
+						text-align: left;
+					}
+					.comment-meta {
+						width: 13.5%;
+						float: left;
+						text-align: right;
+						font-size: 1em;
+						color: darken($lgray, 30%);
+						padding-bottom: 25px;
+						padding-top: 25px;
+
+						em {
+							color: darken($lgray, 30%);
+						}
+						a {
+							font-weight: normal;
+							text-transform: capitalize;
+						}
+						div.dot {
+							background: darken($lgray, 30%);
+							@include border-radius(7px);
+							height:7px;
+							width: 7px;
+							position: absolute;
+							top: 32px;
+							left: 15.7%;
+						}
+					}
+				}
+				.depth-2 {
 					float: right;
-					font-size: 1.1em;
-					border-left: 3px dotted $lgray;
-					padding: 0px 26% 25px 2.5%;
 					text-align: left;
-				}
-				.comment-meta {
-				width: 13.5%;
-				float: left;
-				text-align: right;
-				font-size: 1em;
-				color: darken($lgray, 30%);
-				padding-bottom: 25px;
+					width: 55.3%;
+					padding-right: 26%;
+					border-left: 3px dotted $lgray;
+					padding-left: 2.6%;
 
-				span {
-					font-style: italic;
-					color: darken($lgray, 30%);
-				}
-				a {
-					font-weight: normal;
-					text-transform: capitalize;
-				}
-				div.dot {
-					background: darken($lgray, 30%);
-					@include border-radius(7px);
-					height:7px;
-					width: 7px;
-					position: absolute;
-					top: 0px;
-					left: 15.7%;
-				}
+					div.dot {
+						display: none;
+					}
 
+					.comment-meta {
+						width: 100%;
+						float: none;
+						text-align: left;
+						padding: 0 0 15px 15px !important;
+						border-left: 10px solid $lgray;
+					}
+					.comment-content {
+						width: 100%;
+						float: none;
+						border: none;
+						padding: 0 0 0 15px !important;
+						border-left: 10px solid $lgray;
+						margin-bottom: 30px;
+					}
+
+				}
 				.comment-author, .comment-awaiting-moderation, .comment-content, .comment-list .reply, .comment-metadata {
 					padding-left: 0;
 				}
-			}
 			}
 			#respond {
 				max-width:64%;
@@ -559,7 +608,7 @@ a.button:hover, a.button.rm:hover {
 				width: 75%;
 				float: right;
 				padding-top: 0;
-				padding-bottom: 50px;
+				padding-bottom: 0px;
 				padding-left: 4%;
 				border-left: 3px dotted $lgray;
 
@@ -632,6 +681,13 @@ a.button:hover, a.button.rm:hover {
 		font-weight: bold;
 		padding:0;
 		margin:0;
+	}
+	.panel.content {
+		text-align: left;
+
+		h2 {
+			font-size: 1.8em;
+		}
 	}
 
 	h1 {
@@ -833,7 +889,8 @@ a.button:hover, a.button.rm:hover {
 	.rightSide {
 		float: right;
 	}
-	.sidebar, #secondary {
+	#secondary {display: none;}
+	.sidebar{
 		width: 25%;
 
 		.title {
@@ -852,12 +909,13 @@ a.button:hover, a.button.rm:hover {
 					font-size: 0.9em;
 					@include border-radius(5px);
 					font-weight: normal;
+					padding: 3px 15px;
 				}
 			}
 		}
-		ul li.selected a {
-			color: $dgray;
-			background-color: rgba(104,159,63,0.1);
+		ul li.active a {
+			color: darken($lgray, 50%);
+			background-color: rgba(104,159,63,0.2);
 			font-weight: lighter;
 		}
 		ul.social {

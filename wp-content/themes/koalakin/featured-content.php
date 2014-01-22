@@ -47,7 +47,7 @@
 				<?php endif; ?>
 
 				<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h1>' ); ?>
-				<?php if ($postcount == 1) : ?>
+				<?php if (is_category('1') && $postcount == 1) : ?>
 					<div class="excerpt"><?php the_excerpt(apply_filters('excerpt_length', '20')); ?></div> 
 					<a href="<?php the_permalink; ?>" class="rm button">Read More<span data-icon="b" class="icon"></span></a>
 				<?php endif; ?>

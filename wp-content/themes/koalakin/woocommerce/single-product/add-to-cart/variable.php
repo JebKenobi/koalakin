@@ -20,7 +20,8 @@ global $woocommerce, $product, $post;
 			<?php $loop = 0; foreach ( $attributes as $name => $options ) : $loop++; ?>
 				<tr>
 					<td class="label"><label for="<?php echo sanitize_title($name); ?>"><?php echo $woocommerce->attribute_label( $name ); ?></label></td>
-					<td id="<?php echo esc_attr( sanitize_title($name) ); ?>" class="value">
+					<td class="value"><select id="select<?php echo esc_attr( sanitize_title($name) ); ?>" name="attribute_<?php echo sanitize_title($name); ?>">
+						<option id="<?php echo esc_attr( sanitize_title($name) ); ?>" value=""><?php echo __( 'Choose an option', 'woocommerce' ) ?>&hellip;</option>
 						<?php
 							if ( is_array( $options ) ) {
 
@@ -52,18 +53,24 @@ global $woocommerce, $product, $post;
 										if ( ! in_array( $term->slug, $options ) )
 											continue;
 
-										echo '<input type="radio" value="' . esc_attr( $term->slug ) . '" /><label for="' . esc_attr( $term->slug ) . '">' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</label>';
+										echo '<option value="' . esc_attr( $term->slug ) . '" ' . selected( $selected_value, $term->slug, false ) . '>' . apply_filters( 'woocommerce_variation_option_name', $term->name ) . '</option>';
 									}
 								} else {
 
 									foreach ( $options as $option ) {
-										echo '<input type="radio" name="' . esc_attr( sanitize_title($name) ) . '" value="' . esc_attr( sanitize_title( $option ) ) . '" id="' . esc_attr( sanitize_title( $option ) ) . '" checked="" /><label for="' . esc_attr( sanitize_title( $option ) ) . '">' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</label><p>' . $selected_value . '</p>';
+										echo '<option value="' . esc_attr( sanitize_title( $option ) ) . '" ' . selected( sanitize_title( $selected_value ), sanitize_title( $option ), false ) . '>' . esc_html( apply_filters( 'woocommerce_variation_option_name', $option ) ) . '</option>';
 									}
 
 								}
 							}
 						?>
-					</td>
+					</select> 
+					
+					<?php
+
+						if ( sizeof($attributes) == $loop )
+							echo '<a class="reset_variations" href="#reset">' . __( 'Clear selection', 'woocommerce' ) . '</a>';
+					?></td>
 				</tr>
 	        <?php endforeach;?>
 		</tbody>
