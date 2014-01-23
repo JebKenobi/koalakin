@@ -18,7 +18,18 @@
 		 */
 		do_action( 'twentyfourteen_featured_posts_before' );
 		$postcount = 0; // Initialize the post counter
-		$featured_posts = twentyfourteen_get_featured_posts();
+		
+		if ( is_category('1') ) {
+			$featured_posts = twentyfourteen_get_featured_posts();
+		} elseif ( is_category() || !is_category('1') ) {
+			$cat = get_cat_id( single_cat_title("",false) );
+			$featArgs = array(
+				'posts_per_page' => 3,
+				'category' => $cat,
+			);
+			$featured_posts = get_posts($featArgs);
+			?><h1><?php echo single_cat_title(); ?></h1><?php
+		}
 		foreach ( (array) $featured_posts as $order => $post) :
 			$postcount++; //add 1 to the post counter
 			setup_postdata( $post );
@@ -41,7 +52,7 @@
 			<header class="entry-header">
 				<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
 				<div class="entry-meta">
-					<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
+					<?php if (is_category('1')) : ?><span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span><?php endif; ?>
 					<span class="date"><?php the_time('j M'); ?></span>
 				</div><!-- .entry-meta -->
 				<?php endif; ?>

@@ -170,3 +170,33 @@ function koalakin_comments_callback($comment, $args, $depth) {
         
     <?php
 }
+function myprefix_query_offset(&$query) {
+
+    //Before anything else, make sure this is the right query...
+    if ( ! $query->is_category ) {
+        return;
+    }
+
+    //First, define your desired offset...
+    $offset = 3;
+    
+    //Next, determine how many posts per page you want (we'll use WordPress's settings)
+    $ppp = get_option('posts_per_page');
+
+    //Next, detect and handle pagination...
+    if ( $query->is_paged ) {
+
+        //Manually determine page query offset (offset + current page (minus one) x posts per page)
+        $page_offset = $offset + ( ($query->query_vars['paged']-1) * $ppp );
+
+        //Apply adjust page offset
+        $query->set('offset', $page_offset );
+
+    }
+    else {
+
+        //This is the first page. Just use the offset...
+        $query->set('offset',$offset);
+
+    }
+}

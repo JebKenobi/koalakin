@@ -42,14 +42,15 @@ header.site-header {
 		left: 0;
 		background: url(../images/logo-sm.gif) 6% 45% $lgray no-repeat;
 		width: 100%;
-		padding: 0 0 40px 27%;
+		padding: 0 0 5px 27%;
 		border-bottom: 1px solid darken($lgray, 5%);
+		font-size: 0.9em;
 
 		li {
 			padding: 0;
 
 			a {
-				padding: 20px;
+				padding: 3px 20px;
 				display: inline-block;
 			}
 			a:hover {

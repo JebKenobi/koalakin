@@ -350,26 +350,27 @@ header.site-header {
     left: 0;
     background: url(../images/logo-sm.gif) 6% 45% #f2f0f0 no-repeat;
     width: 100%;
-    padding: 0 0 40px 27%;
-    border-bottom: 1px solid #e6e2e2; }
-    /* line 48, ../scss/partials/_header.scss */
+    padding: 0 0 5px 27%;
+    border-bottom: 1px solid #e6e2e2;
+    font-size: 0.9em; }
+    /* line 49, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.fixed li {
       padding: 0; }
-      /* line 51, ../scss/partials/_header.scss */
+      /* line 52, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.fixed li a {
-        padding: 20px;
+        padding: 3px 20px;
         display: inline-block; }
-      /* line 55, ../scss/partials/_header.scss */
+      /* line 56, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.fixed li a:hover {
         background-color: #fff; }
-    /* line 61, ../scss/partials/_header.scss */
+    /* line 62, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.fixed li.current-menu-item a, header.site-header #primary-navigation.fixed li.current-category-ancestor a {
       background-color: #fff;
       color: #3ab1b8; }
-    /* line 65, ../scss/partials/_header.scss */
+    /* line 66, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.fixed li.current-menu-item a:hover, header.site-header #primary-navigation.fixed li.current-category-ancestor a:hover {
       color: #71a230; }
-  /* line 70, ../scss/partials/_header.scss */
+  /* line 71, ../scss/partials/_header.scss */
   header.site-header .logo img {
     background: url(../images/logo-bottom.png) 100% 50% no-repeat;
     height: auto;
@@ -380,42 +381,42 @@ header.site-header {
     left: 50%;
     margin-left: -240px;
     top: 50px; }
-  /* line 81, ../scss/partials/_header.scss */
+  /* line 82, ../scss/partials/_header.scss */
   header.site-header .logo img {
     background-size: 100%; }
 
-/* line 86, ../scss/partials/_header.scss */
+/* line 87, ../scss/partials/_header.scss */
 .category-3 header.site-header #primary-navigation.fixed li.current-category-ancestor a {
   color: #78665f;
   text-decoration: none;
   font-weight: normal;
   background-color: transparent; }
-/* line 92, ../scss/partials/_header.scss */
+/* line 93, ../scss/partials/_header.scss */
 .category-3 header.site-header #primary-navigation.fixed li.current-category-ancestor a:hover {
   color: #3ab1b8;
   text-decoration: none;
   background-color: #fff; }
 
 @media screen and (max-width: 782px) {
-  /* line 99, ../scss/partials/_header.scss */
+  /* line 100, ../scss/partials/_header.scss */
   header.site-header {
     background: #fff;
     padding: 100px 0px 0px; }
-    /* line 103, ../scss/partials/_header.scss */
+    /* line 104, ../scss/partials/_header.scss */
     header.site-header .header-main {
       padding: 0;
       max-width: 1300px; }
-    /* line 108, ../scss/partials/_header.scss */
+    /* line 109, ../scss/partials/_header.scss */
     header.site-header .logo img {
       top: 64px;
       z-index: 100; }
-    /* line 112, ../scss/partials/_header.scss */
+    /* line 113, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.toggled-on {
       float: right;
       width: 100%;
       margin: 30px 0 0;
       padding: 0; }
-      /* line 119, ../scss/partials/_header.scss */
+      /* line 120, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on li {
         border-bottom: 1px dotted #fff;
         float: none;
@@ -425,60 +426,60 @@ header.site-header {
         padding: 0;
         position: relative;
         z-index: 150; }
-        /* line 128, ../scss/partials/_header.scss */
+        /* line 129, ../scss/partials/_header.scss */
         header.site-header #primary-navigation.toggled-on li a {
           color: #fff;
           padding: 20px; }
-        /* line 132, ../scss/partials/_header.scss */
+        /* line 133, ../scss/partials/_header.scss */
         header.site-header #primary-navigation.toggled-on li a:hover {
           color: #f2f0f0; }
-      /* line 136, ../scss/partials/_header.scss */
+      /* line 137, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on li:hover, header.site-header #primary-navigation.toggled-on li.focus {
         background-color: #2e8c91; }
-      /* line 139, ../scss/partials/_header.scss */
+      /* line 140, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on li:last-child {
         border-bottom: 0; }
-      /* line 142, ../scss/partials/_header.scss */
+      /* line 143, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on .menu-toggle {
         background-color: #3ab1b8; }
-      /* line 145, ../scss/partials/_header.scss */
+      /* line 146, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on .menu-toggle:before {
         color: #fff;
         content: "\f406"; }
-      /* line 149, ../scss/partials/_header.scss */
+      /* line 150, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.toggled-on .nav-menu {
         margin-top: -25px; }
-    /* line 153, ../scss/partials/_header.scss */
+    /* line 154, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.fixed, header.site-header #primary-navigation.fixed.toggled-on {
       float: none;
       background-color: #f2f0f0;
       display: inline-block;
       height: 75px;
       margin-top: 0; }
-      /* line 160, ../scss/partials/_header.scss */
+      /* line 161, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.fixed .menu-toggle, header.site-header #primary-navigation.fixed.toggled-on .menu-toggle {
         top: 0; }
-      /* line 164, ../scss/partials/_header.scss */
+      /* line 165, ../scss/partials/_header.scss */
       header.site-header #primary-navigation.fixed li, header.site-header #primary-navigation.fixed.toggled-on li {
         padding: 0; }
-        /* line 167, ../scss/partials/_header.scss */
+        /* line 168, ../scss/partials/_header.scss */
         header.site-header #primary-navigation.fixed li a, header.site-header #primary-navigation.fixed.toggled-on li a {
           padding: 20px;
           display: block; }
-        /* line 171, ../scss/partials/_header.scss */
+        /* line 172, ../scss/partials/_header.scss */
         header.site-header #primary-navigation.fixed li a:hover, header.site-header #primary-navigation.fixed.toggled-on li a:hover {
           background-color: #2e8c91; }
-    /* line 180, ../scss/partials/_header.scss */
+    /* line 181, ../scss/partials/_header.scss */
     header.site-header #primary-navigation.fixed.toggled-on .nav-menu {
       margin-top: 75px; }
 
-  /* line 185, ../scss/partials/_header.scss */
+  /* line 186, ../scss/partials/_header.scss */
   .menu-toggle {
     height: 75px;
     width: 75px;
     top: 30px; }
 
-  /* line 191, ../scss/partials/_header.scss */
+  /* line 192, ../scss/partials/_header.scss */
   .menu-toggle:before {
     color: #3ab1b8;
     font-size: 40px; } }
@@ -844,34 +845,37 @@ footer#colophon.site-footer {
       footer#colophon.site-footer .content .post a {
         text-decoration: none;
         color: #71a230; }
-      /* line 76, ../scss/partials/_footer.scss */
+      /* line 75, ../scss/partials/_footer.scss */
+      footer#colophon.site-footer .content .post a:hover {
+        color: #3ab1b8; }
+      /* line 79, ../scss/partials/_footer.scss */
       footer#colophon.site-footer .content .post .title {
         font-weight: bold;
         margin: 10px 0 0; }
-      /* line 80, ../scss/partials/_footer.scss */
+      /* line 83, ../scss/partials/_footer.scss */
       footer#colophon.site-footer .content .post .cat, footer#colophon.site-footer .content .post .date {
         margin: 0 0 10px;
         font-size: 0.9em; }
-      /* line 84, ../scss/partials/_footer.scss */
+      /* line 87, ../scss/partials/_footer.scss */
       footer#colophon.site-footer .content .post .cat {
         float: left;
         font-style: italic; }
-        /* line 88, ../scss/partials/_footer.scss */
+        /* line 91, ../scss/partials/_footer.scss */
         footer#colophon.site-footer .content .post .cat a {
           color: #7a6969; }
-      /* line 92, ../scss/partials/_footer.scss */
+      /* line 95, ../scss/partials/_footer.scss */
       footer#colophon.site-footer .content .post .date {
         float: right;
         text-transform: uppercase; }
-    /* line 97, ../scss/partials/_footer.scss */
+    /* line 100, ../scss/partials/_footer.scss */
     footer#colophon.site-footer .content .post:last-child {
       border-bottom: none; }
-  /* line 102, ../scss/partials/_footer.scss */
+  /* line 105, ../scss/partials/_footer.scss */
   footer#colophon.site-footer h2 {
     color: #8cc63f;
     font-size: 2.5em;
     line-height: 1em; }
-  /* line 107, ../scss/partials/_footer.scss */
+  /* line 110, ../scss/partials/_footer.scss */
   footer#colophon.site-footer .site-info {
     background: url(../images/footer-mustache.png) no-repeat 50% 100%;
     font-size: 0.9em;
@@ -880,18 +884,18 @@ footer#colophon.site-footer {
     height: 20px;
     padding-top: 70px;
     margin-bottom: -4px; }
-    /* line 116, ../scss/partials/_footer.scss */
+    /* line 119, ../scss/partials/_footer.scss */
     footer#colophon.site-footer .site-info p {
       padding-top: 20px; }
-    /* line 120, ../scss/partials/_footer.scss */
+    /* line 123, ../scss/partials/_footer.scss */
     footer#colophon.site-footer .site-info a {
       color: #c3b9b9; }
 
-/* line 126, ../scss/partials/_footer.scss */
+/* line 129, ../scss/partials/_footer.scss */
 .homepage footer {
   text-align: center;
   padding: 0 20%; }
-  /* line 130, ../scss/partials/_footer.scss */
+  /* line 133, ../scss/partials/_footer.scss */
   .homepage footer .content {
     margin: 0 auto;
     max-width: 800px;

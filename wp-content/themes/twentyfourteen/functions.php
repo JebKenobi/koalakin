@@ -108,7 +108,7 @@ function twentyfourteen_setup() {
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
 		'featured_content_filter' => 'twentyfourteen_get_featured_posts',
-		'max_posts' => 6,
+		'max_posts' => 3,
 	) );
 
 	// This theme uses its own gallery styles.

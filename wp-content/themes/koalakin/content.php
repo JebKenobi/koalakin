@@ -22,7 +22,7 @@
 				echo '</time>';
 				echo '<div class="dot"></div>';
 
-			edit_post_link( __( 'Edit', 'twentyfourteen' ), '<span class="edit-link">', '</span>' );
+			edit_post_link( __( 'Edit', 'twentyfourteen' ), '<br /><span class="edit-link">', '</span>' );
 		?>
 		<?php if(is_single()): ?>
 			<p><a href="<?php the_author_meta('user_url'); ?>"><?php the_author_meta('display_name'); ?></a></p>
@@ -37,13 +37,12 @@
 	</div><!-- .entry-meta -->
 	<div class="the_post">
 		<header class="entry-header">
-			<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && twentyfourteen_categorized_blog() ) : ?>
-			<div class="entry-meta">
-				<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
-			</div>
+				<?php if ( is_category('1') ) : ?>
+					<div class="entry-meta">
+						<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'twentyfourteen' ) ); ?></span>
+					</div>
+				<?php endif; ?>
 			<?php
-				endif;
-
 				if ( is_single() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
 				else :
@@ -54,8 +53,12 @@
 		<?php if(is_single()): the_post_thumbnail('full'); endif; ?>
 		<?php if ( is_search() || is_archive() || is_category() ) : ?>
 		<div class="entry-summary">
-			<?php echo closetags( content(155) );?>  
-			<a href="<?php the_permalink; ?>" class="rm button">Read More<span data-icon="b" class="icon"></span></a>
+			<?php if ( is_category('1') ) : ?>
+				<?php echo closetags( content(155) );?>  
+				<a href="<?php the_permalink; ?>" class="rm button">Read More<span data-icon="b" class="icon"></span></a>
+			<?php else : ?>
+				<?php echo closetags( content(50) );?>
+			<?php endif; ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">

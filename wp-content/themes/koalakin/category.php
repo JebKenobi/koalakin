@@ -17,8 +17,6 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 			
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'twentyfourteen' ), single_cat_title( '', false ) ); ?></h1>
-
 				<?php
 					// Show an optional term description.
 					$term_description = term_description();
@@ -29,6 +27,7 @@ get_header(); ?>
 			</header><!-- .archive-header -->
 			<?php
 				if ( twentyfourteen_has_featured_posts() ) {
+					
 					// Include the featured content template.
 					get_template_part( 'featured-content' );
 				}
@@ -37,11 +36,26 @@ get_header(); ?>
 					dynamic_sidebar( 'blog-sidebar' );
 					echo '</div>';
 				endif;
-			?>
-			<?php
-					// Start the Loop.
-					while ( have_posts('&taxonomy=24') ) : the_post();
+					$dnd_query = new WP_Query( 'tag__in=24' );
+					$do_not_duplicate = array();
+					while ( $dnd_query->have_posts() ) : $dnd_query->the_post();
+					    $do_not_duplicate[] = get_the_ID() ;
+					endwhile;
 
+					$cat = get_cat_id( single_cat_title("",false) );
+					$cat_query = new WP_Query( array( 'category__and' => $cat, 'posts_per_page' => 3) );
+					$do_not_duplicate_cat = array();
+					while ( $cat_query->have_posts() ) : $cat_query->the_post();
+					    $do_not_duplicate_cat[] = get_the_ID() ;
+					endwhile;
+
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
+					if (is_category('1')) {
+						if (in_array($post->ID, $do_not_duplicate)) continue;
+					} elseif (is_category() && !is_category('1')) {
+						if (in_array($post->ID, $do_not_duplicate_cat)) continue;
+					}
 					/*
 					 * Include the post format-specific template for the content. If you want to
 					 * use this in a child theme, then include a file called called content-___.php

@@ -72,6 +72,9 @@ footer#colophon.site-footer {
 				text-decoration: none;
 				color: darken($green, 10%);
 			}
+			a:hover {
+				color: $teal;
+			}
 
 			.title {
 				font-weight: bold;

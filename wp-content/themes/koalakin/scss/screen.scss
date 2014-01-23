@@ -24,6 +24,17 @@ h1 {
 	color: #bbeaed;
 	font-size: 3em;
 }
+.category, .archive {
+	h1 {
+		color: darken($lgray, 30%);
+		font-size: 1.5em;
+		text-align: left;
+	}
+	h1.entry-title {
+		font-size: 2.1em;
+		margin-top: -7px;
+	}
+}
 h2 {
 	color: $green;
 }
@@ -34,7 +45,7 @@ a.button {
 	display: inline-block;
 	width: auto;
 	padding: 10px 30px;
-	font-size: 1em;
+	font-size: 17px;
 	background-color: $teal;
 	@include border-radius(5px);
 	text-align: center;
@@ -233,13 +244,14 @@ a.button:hover, a.button.rm:hover {
 
 			a {
 				text-decoration: none;
-				font-size: 1.1em;
+				font-size: 1em;
 				@include border-radius(5px);
 				font-weight: normal;
+				padding: 5px 10px;
 			}
 		}
 	}
-	ul li.selected a {
+	ul li.selected a, ul li.current-cat a {
 		color: $dgray;
 		background-color: rgba(104,159,63,0.1);
 		font-weight: lighter;
@@ -253,6 +265,10 @@ a.button:hover, a.button.rm:hover {
 			float: left;
 			margin: 0 14px 0 0;
 			padding: 0;
+
+			a {
+				padding: 0;
+			}
 		}
 		li.rss {
 			margin-right: 0;
@@ -291,10 +307,10 @@ a.button:hover, a.button.rm:hover {
 
 		.entry-meta {
 			background: none;
-			color: $dgray;
+			color: darken($lgray, 30%);
 			width: 100%;
 			max-width: 100%;
-			font-size: 0.8em;
+			font-size: 0.9em;
 			padding-bottom: 20px;
 
 			.cat-links {
@@ -305,8 +321,9 @@ a.button:hover, a.button.rm:hover {
 
 			}
 			.date {
-				float: right;
+				float: left;
 				font-weight: lighter;
+				color: darken($lgray, 30%);
 			}
 		}
 	}
@@ -326,19 +343,27 @@ a.button:hover, a.button.rm:hover {
 	}
 }
 .category-1 #featured-content {
+
+	padding-top: 50px;
+
 	.featured-content-inner article:first-of-type {
 		width: 62%;
 		float: left;
 		background-color: $lgray;
 		border-left: 15px solid $teal;
 		font-size: 1.1em;
-		padding-bottom: 20px;
+		padding-bottom: 0px;
 		margin-right: 0;
 
+		.post-thumbnail img {
+			width: 100%;
+		}
 		header {
 			background: none;
 		}
-
+	}
+	.entry-header .entry-meta .date {
+		float: right;
 	}
 	.hentry {
 		float: right;
@@ -648,6 +673,7 @@ a.button:hover, a.button.rm:hover {
 				}
 				.entry-summary {
 					font-size: 1.2em;
+					padding-bottom: 50px;
 				}
 			}
 }
