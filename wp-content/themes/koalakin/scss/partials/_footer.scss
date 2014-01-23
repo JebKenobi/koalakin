@@ -138,3 +138,14 @@ footer#colophon.site-footer {
 	background-size: 100%;
 	}
 }
+@media screen and (max-width: 760px) { 
+	footer#colophon.site-footer .content {
+		.colLeft, .colRight {
+			width: 100%;
+			clear: both;
+		}
+		.post {
+			width: 100%;
+		}
+	}
+}

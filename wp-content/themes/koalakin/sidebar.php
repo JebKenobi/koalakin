@@ -15,8 +15,10 @@
 	<h2 class="site-description"><?php echo esc_html( $description ); ?></h2>
 	<?php endif; ?>
 
-	<?php if (is_page()) : ?>
-		<p class="title"><?php the_title(); ?></p>
+	<?php if (is_page()) :
+		$parent_title = get_the_title($post->post_parent);
+		$parent_url = get_permalink($post->post_parent); ?>
+		<p class="title"><a href="<?php echo $parent_url; ?>"><?php echo $parent_title; ?></a></p>
 		<?php if($post->post_parent): ?>
 		<?php $children = wp_list_pages('title_li=&child_of='.$post->post_parent.'&echo=0'); ?>
 		<?php else: ?>

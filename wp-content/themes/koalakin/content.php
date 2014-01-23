@@ -57,7 +57,7 @@
 				<?php echo closetags( content(155) );?>  
 				<a href="<?php the_permalink; ?>" class="rm button">Read More<span data-icon="b" class="icon"></span></a>
 			<?php else : ?>
-				<?php echo closetags( content(50) );?>
+				<?php echo closetags( content(45) );?>
 			<?php endif; ?>
 		</div><!-- .entry-summary -->
 		<?php else : ?>

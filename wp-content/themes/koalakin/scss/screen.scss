@@ -17,7 +17,7 @@ body * {
     color: darken($brown, 10%);
 }
 
-h1, h2, h3, .serif {
+h1, h2, .serif {
 	font-family: 'Kefa', Georgia, serif;
 }
 h1 {
@@ -36,7 +36,14 @@ h1 {
 	}
 }
 h2 {
-	color: $green;
+	color: darken($lgray, 50%);
+	font-size: 1.2em;
+	font-weight: lighter;
+}
+h3 {
+	font-size: 1em;
+	font-weight: lighter;
+	text-transform: uppercase;
 }
 a {
 	color: darken($green, 10%);
@@ -395,25 +402,25 @@ a.button:hover, a.button.rm:hover {
 			li a {
 				background-position: 0 100%;
 			}
-			li.menu-item-76 a {
+			li.menu-item-76 a, li.menu-item-43 a  {
 				background-position: $twi 100%;
 			}
-			li.menu-item-77 a {
+			li.menu-item-77 a, li.menu-item-44 a {
 				background-position: $pin 100%;
 			}
-			li.menu-item-78 a {
+			li.menu-item-78 a, li.menu-item-46 a {
 				background-position: $rss 100%;
 			}
 			li a:hover {
 				background-position: 0 0%;
 			}
-			li.menu-item-76 a:hover {
+			li.menu-item-76 a:hover, li.menu-item-43 a:hover {
 				background-position: $twi 0%;
 			}
-			li.menu-item-77 a:hover {
+			li.menu-item-77 a:hover, li.menu-item-44 a:hover {
 				background-position: $pin 0%;
 			}
-			li.menu-item-78 a:hover {
+			li.menu-item-78 a:hover, li.menu-item-46 a:hover {
 				background-position: $rss 0%;
 			}
 			
@@ -646,7 +653,7 @@ a.button:hover, a.button.rm:hover {
 					text-transform: none;
 					font-size: 1.4em;
 				}
-				h2 {
+				h2.entry-title {
 					color: $green;
 					margin-top: 0;
 					padding-top: 0;
@@ -915,13 +922,17 @@ a.button:hover, a.button.rm:hover {
 	.rightSide {
 		float: right;
 	}
-	#secondary {display: none;}
-	.sidebar{
+	#secondary {}
+	.sidebar, #secondary{
 		width: 25%;
 
 		.title {
 			font-weight: bold;
 			text-transform: uppercase;
+
+			a {
+				color: darken($lgray, 50%);
+			}
 		}
 		ul {
 			margin: 0;
@@ -939,7 +950,7 @@ a.button:hover, a.button.rm:hover {
 				}
 			}
 		}
-		ul li.active a {
+		ul li.active a, ul li.current_page_item a {
 			color: darken($lgray, 50%);
 			background-color: rgba(104,159,63,0.2);
 			font-weight: lighter;
@@ -977,28 +988,28 @@ ul#menu-social li a, ul#menu-social-1 li a, .single .sidebar ul#menu-social li a
 	text-indent: -9999px;
 }
 ul#menu-social, ul#menu-social-1 {
-	li.menu-item-76 a {
+	li.menu-item-76 a, li.menu-item-43 a {
 		background-position: $twi 0%;
 	}
 }
-.single .sidebar ul#menu-social li.menu-item-76 a:hover {
+.single .sidebar ul#menu-social li.menu-item-76 a:hover, .single .sidebar ul#menu-social li.menu-item-43 a:hover {
 	background-position: $twi 0%;
 }
 
 ul#menu-social, ul#menu-social-1 {
-	li.menu-item-77 a {
+	li.menu-item-77 a, li.menu-item-44 a  {
 		background-position: $pin 0%;
 	}
 }
-.single .sidebar ul#menu-social li.menu-item-77 a:hover {
+.single .sidebar ul#menu-social li.menu-item-77 a:hover, .single .sidebar ul#menu-social li.menu-item-44 a:hover {
 	background-position: $pin 0%;
 }
 ul#menu-social, ul#menu-social-1 {
-	li.menu-item-78 a {
+	li.menu-item-78 a, li.menu-item-46 a  {
 		background-position: $rss 0%;
 	}
 }
-.single .sidebar ul#menu-social li.menu-item-78 a:hover {
+.single .sidebar ul#menu-social li.menu-item-78 a:hover, .single .sidebar ul#menu-social li.menu-item-46 a:hover {
 	background-position: $rss 0%;
 }
 blockquote {

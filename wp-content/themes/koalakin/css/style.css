@@ -726,7 +726,7 @@ header.site-header {
     /* line 256, ../scss/partials/_home.scss */
     #content .section_1 header h2, #content .section_1 article header h2 {
       color: #8cc63f;
-      font-size: 3em;
+      font-size: 2.4em;
       max-width: 100%;
       margin-top: 1%; }
     /* line 262, ../scss/partials/_home.scss */
@@ -903,6 +903,14 @@ footer#colophon.site-footer {
     padding-bottom: 50%;
     background-size: 100%; }
 
+@media screen and (max-width: 760px) {
+  /* line 143, ../scss/partials/_footer.scss */
+  footer#colophon.site-footer .content .colLeft, footer#colophon.site-footer .content .colRight {
+    width: 100%;
+    clear: both; }
+  /* line 147, ../scss/partials/_footer.scss */
+  footer#colophon.site-footer .content .post {
+    width: 100%; } }
 /* line 14, ../scss/style.scss */
 body {
   font-family: "Proxima Nova", "Helvetica Nueue", Arial, sans-serif;
