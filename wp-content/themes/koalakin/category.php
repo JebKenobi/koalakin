@@ -36,7 +36,7 @@ get_header(); ?>
 					dynamic_sidebar( 'blog-sidebar' );
 					echo '</div>';
 				endif;
-					$dnd_query = new WP_Query( 'tag__in=24' );
+					$dnd_query = new WP_Query( 'tag__in=16' );
 					$do_not_duplicate = array();
 					while ( $dnd_query->have_posts() ) : $dnd_query->the_post();
 					    $do_not_duplicate[] = get_the_ID() ;
