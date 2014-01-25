@@ -16,7 +16,7 @@ $pin: -92px;
 $rss: -138px;
 
 $break-small: 320px;
-$break-large: 1300px;
+$break-large: 1200px;
 
 @mixin respond-to($media) {
   @if $media == handhelds {

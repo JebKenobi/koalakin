@@ -33,6 +33,7 @@
 		$(document).ready(function(){
 		  $("div.newsletterToggle").click(function(){
 		    $("div#newsletter").toggle();
+		    $(".close").toggle();
 		  });
 		});
 	</script>
@@ -61,21 +62,23 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-main">
 			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Primary Menu', 'twentyfourteen' ); ?></h1>
+				<h1 class="menu-toggle"></h1>
 				<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-				<div class="newsletterToggle"><p>Newsletter</p> <span data-icon="e" class="icon"></span></div>
-				<div id="newsletter">
-					<span class="close">x</span>
-			            <!-- Begin MailChimp Signup Form -->
-			            <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-			            <div id="mc_embed_signup">
-			                 <form style="z-index:1000" action="http://koalakin.us4.list-manage.com/subscribe/post?u=bb9f4d5a1cedba57c9f6f3103&amp;id=0b2f9f1938" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-				            	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Sign up to receive our newsletter" required=""> 
-			                    <input type="submit" value="Sign Up" style="border:0" name="subscribe" id="mc-embedded-subscribe" class="button1">
-			                </form>
-			            <!--End mc_embed_signup-->
-			        </div>
+				<div class="container">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+					<div class="newsletterToggle"><span class="close">x</span><p>Newsletter</p> <span data-icon="e" class="icon"></span></div>
+					<div id="newsletter">
+				            <!-- Begin MailChimp Signup Form -->
+				            <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+				            <div id="mc_embed_signup">
+				                 <form style="z-index:1000" action="http://koalakin.us4.list-manage.com/subscribe/post?u=bb9f4d5a1cedba57c9f6f3103&amp;id=0b2f9f1938" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+				                 	<p class="title">Sign up to recieve our newsletter:</p>
+					            	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="janesmith@example.com" required=""> 
+				                    <input type="submit" value="Sign Up" style="border:0" name="subscribe" id="mc-embedded-subscribe" class="button1">
+				                </form>
+				            <!--End mc_embed_signup-->
+				        </div>
+					</div>
 				</div>
 			</nav>
 			<a class="logo" href="<?php bloginfo ( 'url' ); ?>"><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/logo.png" width="185" height="47" border="0" /></a>

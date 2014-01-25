@@ -4,7 +4,12 @@ header.site-header {
 	position: relative;
 	z-index: 100;
 	background-color: #fff;
-	
+
+	.header-main {
+		max-width: $break-large;
+		margin: 0 auto;
+	}
+
 	#primary-navigation {
 		list-style-type: none;
 		margin: 0 auto;
@@ -44,15 +49,29 @@ header.site-header {
 		position: fixed;
 		top: 0;
 		left: 0;
-		background: url(../images/logo-sm.gif) 6% 45% $lgray no-repeat;
+		background-color: $lgray;
 		width: 100%;
-		padding: 0 0 5px 27%;
+		padding: 0;
 		border-bottom: 1px solid darken($lgray, 5%);
 		font-size: 0.9em;
 
+		.nav-menu {
+			position: relative;
+			left: 18%;
+		}
+
+		.container {
+			background: url(../images/logo-sm.gif) 0% 45% no-repeat;
+			padding: 0;
+			display: inline-block;
+			width: 85%;
+			max-width: $break-large;
+			position: relative;
+		}
+
 		#newsletterToggle, .newsletterToggle {
 			position: absolute;
-			right: 10%;
+			right: 0;
 			z-index: 155;
 			display: inline-block;
 			cursor: pointer;
@@ -73,6 +92,23 @@ header.site-header {
 				font-size: 3em;
 				color: darken($lgray, 30%);
 			}
+			.close {
+				background-color: #fe57a1;
+				border-radius: 20px;
+				padding: 7px 4px 0;
+				font-size: 0.7em;
+				line-height: 0em;
+				color: #f2f0f0;
+				position: absolute;
+				right: 0%;
+				top: 53%;
+				z-index: 180;
+				height: 7px;
+				width: 7px;
+				text-align: center;
+				display: none;
+				border: 1px solid #fff;
+			}
 		}
 		.newsletterToggle:hover {
 			
@@ -81,6 +117,10 @@ header.site-header {
 			}
 			span {
 				color: darken($lgray, 40%);
+			}
+			.close {
+				color: $lgray;
+				background-color: darken(#fe57a1, 10%);
 			}
 		}
 		#newsletter {
@@ -93,33 +133,22 @@ header.site-header {
 			left: 0;
 			z-index: 150;
 
-			.close {
-				background-color: #5c4c48;
-				border-radius: 20px;
-				padding: 7px 5px 0;
-				font-size: 0.7em;
-				line-height: 0em;
-				color: #f2f0f0;
-				position: absolute;
-				right: 10%;
-				top: 65%;
-				z-index: 180;
-				height: 7px;
-				width: 7px;
-				text-align: center;
-			}
 
 			#mc_embed_signup {
 
-				input {
+				input, p.title {
 					float: left;
 					margin-right: 15px;
+				}
+				p.title {
+					display: inline-block;
+					font-weight: bold;
+					line-height: 2.5em;
 				}
 				input[type="email"] {
 					background-color: #fff;
 					border: 1px solid darken($lgray, 10%);
 					width: 35%;
-					margin-left: 7%;
 				}
 				input[type="submit"] {
 					background-color: $teal;
@@ -141,7 +170,7 @@ header.site-header {
 			padding: 0;
 
 			a {
-				padding: 3px 20px;
+				padding: 4px 20px;
 				display: inline-block;
 			}
 			a:hover {
@@ -187,6 +216,21 @@ header.site-header {
 				background-color: #fff;
 			}
 }
+@media screen and (min-width: $break-large) {
+	header.site-header {
+		
+		#primary-navigation.fixed {
+			.container {
+				padding-left: 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1000px) {
+	.newsletterToggle p {
+		display: none !important;
+	}
+}
 @media screen and (max-width: 782px) {
 	header.site-header {
 		background: #fff;
@@ -194,18 +238,47 @@ header.site-header {
 
 		.header-main {
 			padding: 0;
-			max-width: $break-large;
 		}
 
 		.logo img {
 			top: 64px;
 			z-index: 100;
 		}
+		#primary-navigation.fixed {
+
+			.container {
+
+				.newsletterToggle {
+					right: 5%;
+					top: 2px;
+				}
+			}
+			#newsletter {
+					background: none;
+					p.title {
+						display: none !important;
+					}
+				}
+		}
 		#primary-navigation.toggled-on {
 			float: right;
 			width: 100%;
 			margin: 30px 0 0;
 			padding: 0;
+
+			.container {
+				padding: 0;
+				background: none;
+				width: 100%;
+
+				.nav-menu {
+					left: 0;
+				}
+				.newsletterToggle {
+					right: 15%;
+					top: 15px;
+				}
+			}
 			
 
 			li {

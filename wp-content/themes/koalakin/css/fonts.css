@@ -147,3 +147,7 @@ body [data-icon]:before, body .icon {
 /* line 89, ../scss/fonts.scss */
 .icon-mail:before {
   content: "e"; }
+
+/* line 92, ../scss/fonts.scss */
+.icon-shopping-cart:before {
+  content: "k"; }

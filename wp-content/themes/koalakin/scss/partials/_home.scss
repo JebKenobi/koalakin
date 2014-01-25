@@ -3,7 +3,6 @@
 	.homeSec {
 		clear: both;
 		padding: 30px 7%;
-		display: inline-block;
 		font-size: 1.2em;
 
 		a {
@@ -32,9 +31,10 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		font-weight: lighter;
+		background-color: darken($lgray, 30%);
 
 		article {
-			max-width: 100%;
+			max-width: $break-large;
 			@include background(linear-gradient(top left, rgba(0,0,0,0.7), $trans));
 			padding: 30px 10%;
 			
@@ -104,6 +104,17 @@
 				margin: 20px 20px 0 0;
 			}
 		}
+
+	}
+	@media screen and (min-width: $break-large) {
+		.section_1 {
+			background-size: $break-large + 200;
+
+			article {
+				max-width: $break-large;
+				padding: 30px 100px;
+			}
+		}
 	}
 	@media screen and (max-width: 782px) {
 		.section_1 {
@@ -115,6 +126,7 @@
 		}
 	}
 	.section_2 {
+		display: inline-block;
 
 		.colLeft {
 			text-align: center;
@@ -209,6 +221,9 @@
 		display: block;
 		padding-bottom: 50px;
 		text-align: left;
+		max-width: $break-large;
+		margin: 0 auto;
+		clear: both;
 
 		.feat-3 {
 			margin-right: 0;

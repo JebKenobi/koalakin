@@ -609,6 +609,83 @@ a.button:hover, a.button.rm:hover {
 		}
 	}
 }
+@media screen and (max-width: 782px) {
+	.site-content {
+		position: relative;
+		padding-bottom: 200px !important;
+	}
+	.menu-toggle {
+		z-index: 100;
+	}
+	.menu-toggle:before {
+		padding-left: 15px;
+	}
+	.rightSide.sidebar {
+		float: none;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		margin-left: -10%;
+
+		p.title:first-of-type,.menu-social-container {
+			display: none;
+		}
+		p.title {
+			background-color: $teal;
+			padding: 7px 10%;
+			color: #fff;
+			font-weight: lighter;
+			margin: 0;
+			border-bottom: 1px solid darken($teal, 10%);
+		}
+		ul {
+			background-color: rgba(58,177,184,0.2);
+			width: 100%;
+			display: block;
+			float: none;
+
+			li {
+				padding: 0;
+				border-bottom: 1px solid $teal;
+				margin: 0;
+
+				a {
+					background: none !important;
+					color: $teal !important;
+					font-weight: lighter;
+					text-transform: uppercase;
+					font-size: 1.1em;
+					padding: 7px 10%;
+					width: 80%;
+					display: block;
+				}
+			}
+			li:hover, li:active {
+				background-color: rgba(58,177,184,0.3);
+			}
+		}
+	}
+	.archive article, .category article, .single article {
+		width: 100%; 
+	}
+	#featured-content {
+		.hentry {
+			float: right;
+			margin-right: 0;
+			width: 47%;
+		}
+		.hentry:first-of-type {
+			float: left;
+		}
+		.hentry:last-child {
+			display: none;
+		}
+	}
+
+}
+.woocommerce.single #content {
+	padding-top: 50px;
+}
 #content article.post {
 	.left-entry-meta {
 		width: 18%;
@@ -702,6 +779,10 @@ a.button:hover, a.button.rm:hover {
 .reset_variations, .quantity input[type="button"], .stock, .product_meta, .woocommerce-breadcrumb {
 	display: none;
 }
+#secondary {
+	background: none;
+	border: none;
+}
 .woocommerce #main, .page #main {
 	clear: both;
 	padding: 75px 10% 30px;
@@ -766,7 +847,9 @@ a.button:hover, a.button.rm:hover {
 		.label {
 			font-weight: bold;
 		}
-		
+		select {
+			max-width: 95px;
+		}
 		
 		td#color {
 			padding-left: 0;
@@ -816,22 +899,37 @@ a.button:hover, a.button.rm:hover {
 	}
 	.variations_button {
 		float: right;
-		width: 50%;
+		width: 70%;
+		text-align: right;
 		text-align: right;
 
 		.quantity { 
-			float: left;
+			display: inline-block;
 		} 
 		.button {
-			float: right;
-			background: url(../images/cart.png) $teal 100% 50% no-repeat;
-			padding:10px 60px 7px 15px;
+			display: inline-block;
+			padding:0px 0px 0px 15px;
 			@include border-radius(3px);
+			background-color: $teal;
 			border: none;
 			color: #fff;
 			font-weight: lighter;
 			font-size: 0.9em;
 			margin-left: 10px;
+			line-height: 2em;
+
+			span {
+				color: #fff;
+				background-color: rgba(255,255,255,0.4);
+				font-size: 1.7em;
+				padding: 10px 7px;
+				margin-left: 10px;
+				position: relative;
+				top: 7px;
+			}
+		}
+		.button:hover {
+			background-color: $green;
 		}
 	}
 	#extra {

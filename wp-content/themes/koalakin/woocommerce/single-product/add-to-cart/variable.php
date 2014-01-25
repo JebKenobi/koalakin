@@ -83,7 +83,7 @@ global $woocommerce, $product, $post;
 		<div class="variations_button">
 			<input type="hidden" name="variation_id" value="" />
 			<?php woocommerce_quantity_input(); ?>
-			<button type="submit" class="single_add_to_cart_button button alt"><?php echo apply_filters('single_add_to_cart_text', __( 'Buy Now', 'woocommerce' ), $product->product_type); ?></button>
+			<button type="submit" class="single_add_to_cart_button button alt"><?php echo apply_filters('single_add_to_cart_text', __( 'Buy Now', 'woocommerce' ), $product->product_type); ?><span data-icon="k" class="icon"></span></button>
 		</div>
 	</div>
 	<div>
