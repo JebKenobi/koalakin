@@ -683,6 +683,21 @@ a.button:hover, a.button.rm:hover {
 	}
 
 }
+@media screen and (max-width: 640px) {
+	#featured-content {
+		.hentry {
+			float: none;
+			margin:0 0 20px;
+			width: 100%;
+		}
+		.hentry:first-of-type {
+			float: left;
+		}
+		.hentry:last-child {
+			display: none;
+		}
+	}
+}
 .woocommerce.single #content {
 	padding-top: 50px;
 }
@@ -1133,4 +1148,66 @@ blockquote {
 }
 .site-content .entry-date a:before, .attachment .site-content span.entry-date:before {
 	content: '';
+}
+@media screen and (max-width: 500px) {
+	.archive #content, .category #content, .single #content {
+		padding: 0 5%;
+	}
+	#content article.post {
+		.left-entry-meta, .the_post {
+			width: 96%;
+			padding-left: 4%;
+			border-left: 3px dotted #f2f0f0;
+			float: none;
+		}
+		.left-entry-meta {
+			padding-top: 0;
+			padding-bottom: 1px;
+			.post-thumbnail {
+				display: none;
+			}
+			div.dot {
+				left: -0.5px;
+			}
+			.entry-date {
+				text-align: left;
+				float: none;
+				display: block;
+
+				br {
+					display: none;
+				}
+				em {
+					padding-right: 7px;
+				}
+			}
+		}
+		.the_post {
+			margin-top: 10px;
+			.entry-header {
+				background: none;
+				margin-top: 7px;
+			}
+		}
+	}
+	.list-view .site-content .hentry:first-of-type, .list-view .site-content .hentry {
+		max-width: 100%;
+	}
+
+}
+@media screen and (max-width: 400px) {
+	.archive-header, .page-header {
+		border: none;
+	}
+	.list-view .site-content .post-thumbnail img {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	#featured-content .entry-header .entry-meta, #featured-content .entry-header h1 {
+		margin: 10px;
+	}
+	#featured-content .hentry:first-of-type {
+		border: none;
+	}
 }
